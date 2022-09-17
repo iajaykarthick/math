@@ -58,3 +58,19 @@ plot(success,
      lwd=3)
 
 ```
+
+
+
+## qbinom
+```{r}
+quantiles <- seq(0, 1, .001)
+inverse_cdf <- qbinom(p=quantiles, size=num_of_observations, prob=0.5)
+plot(quantiles, 
+     inverse_cdf,
+     type='s',
+     main='Binomial Distribution - Quantile',
+     xlab='p',
+     ylab='Q(p)',
+     lwd=1)
+```
+
