@@ -21,4 +21,75 @@ Hence,
 \text{ for x = 1, 2, 3,...}
 \]
 
+### Expected Value
+
+$$E[X] = \mu = \frac{1}{p}$$
+
+#### Expected Value Calculation Proof
+
 <iframe  width="560" height="315" src="https://www.youtube.com/embed/7br_-emGNec" data-external= "1" > </iframe>
+
+
+### Variance
+
+$$Var[X] = \sigma^2 = \frac{1-p}{p^2}$$
+
+#### Variance Calculation Proof
+
+<iframe  width="560" height="315" src="https://www.youtube.com/embed/yTW5uNVh8dw" data-external= "1" > </iframe>
+
+
+### rgeom
+
+```{r}
+n=10
+p=0.4
+rgeom(n=n, prob=p)
+```
+
+### dgeom
+
+```{r}
+x=0:100
+p=0.1
+pmf <- dgeom(x=x, prob=p)
+plot(x, 
+     pmf,
+     type='h',
+     main='Geometric Distribution - PMF',
+     xlab='First Success Trial',
+     ylab='Probability',
+     lwd=3)
+```
+
+
+
+### pgeom
+
+```{r}
+q=0:100
+p=0.1
+cdf <- pgeom(q=q, prob=p)
+plot(q, 
+     cdf,
+     type='h',
+     main='Geometric Distribution - CDF',
+     xlab='First Success Trial',
+     ylab='Probability',
+     lwd=3)
+```
+
+### qgeom
+
+```{r}
+quantiles <- seq(0, 1, .001)
+inverse_cdf <- qgeom(p=quantiles, prob=0.5)
+plot(quantiles, 
+     inverse_cdf,
+     type='s',
+     main='Geometric Distribution - Quantile',
+     xlab='p',
+     ylab='Q(p)',
+     lwd=1)
+```
+
