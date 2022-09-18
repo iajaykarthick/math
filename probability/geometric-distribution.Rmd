@@ -21,6 +21,9 @@ Hence,
 \text{ for x = 1, 2, 3,...}
 \]
 
+
+The Minimum Value the Geometrically distributed random variable X can take is 1.
+
 ### Expected Value
 
 $$E[X] = \mu = \frac{1}{p}$$
@@ -37,6 +40,21 @@ $$Var[X] = \sigma^2 = \frac{1-p}{p^2}$$
 #### Variance Calculation Proof
 
 <iframe  width="560" height="315" src="https://www.youtube.com/embed/yTW5uNVh8dw" data-external= "1" > </iframe>
+
+
+### Probability Mass Function (PMF)
+
+$$P[X=x] = (1-p)^{x-1} * p$$
+
+### Cumulative Density Function (CDF)
+
+\[F(x) = P[X \leq x] = 1 - (1-p)^x\\
+\text{for x = 1, 2, 3, ....}
+\]
+
+#### CDF Proof
+
+<iframe  width="560" height="315" src="https://www.youtube.com/embed/zq9Oz82iHf0?start=436" data-external= "1" > </iframe>
 
 
 ### rgeom
@@ -61,7 +79,6 @@ plot(x,
      ylab='Probability',
      lwd=3)
 ```
-
 
 
 ### pgeom

@@ -379,6 +379,8 @@ for this to happen is <span class="math inline">\((1-p)^{(x-1)}\)</span>) 2. <sp
 <p>Hence, <span class="math display">\[P[X=x] = (1-p)^{(x-1)}p \\
 \text{ for x = 1, 2, 3,...}
 \]</span></p>
+<p>The Minimum Value the Geometrically distributed random variable X can
+take is 1.</p>
 <div id="expected-value" class="section level3">
 <h3>Expected Value</h3>
 <p><span class="math display">\[E[X] = \mu = \frac{1}{p}\]</span></p>
@@ -398,12 +400,27 @@ for this to happen is <span class="math inline">\((1-p)^{(x-1)}\)</span>) 2. <sp
 </iframe>
 </div>
 </div>
+<div id="probability-mass-function-pmf" class="section level3">
+<h3>Probability Mass Function (PMF)</h3>
+<p><span class="math display">\[P[X=x] = (1-p)^{x-1} * p\]</span></p>
+</div>
+<div id="cumulative-density-function-cdf" class="section level3">
+<h3>Cumulative Density Function (CDF)</h3>
+<p><span class="math display">\[F(x) = P[X \leq x] = 1 - (1-p)^x\\
+\text{for x = 1, 2, 3, ....}
+\]</span></p>
+<div id="cdf-proof" class="section level4">
+<h4>CDF Proof</h4>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zq9Oz82iHf0?start=436" data-external="1">
+</iframe>
+</div>
+</div>
 <div id="rgeom" class="section level3">
 <h3>rgeom</h3>
 <pre class="r"><code>n=10
 p=0.4
 rgeom(n=n, prob=p)</code></pre>
-<pre><code>##  [1] 2 1 0 0 0 2 1 0 1 0</code></pre>
+<pre><code>##  [1] 2 0 1 0 5 1 0 2 2 1</code></pre>
 </div>
 <div id="dgeom" class="section level3">
 <h3>dgeom</h3>
