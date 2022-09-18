@@ -1,5 +1,5 @@
 ---
-title: "geometric-distribution"
+title: "Geometric Distribution"
 author: "Ajay Karthick"
 date: "`r Sys.Date()`"
 output: html_document
