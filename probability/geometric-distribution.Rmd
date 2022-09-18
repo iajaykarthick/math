@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Geometric Distribution is the distribution of the number of trials needed to get the first success in repeated independent Bernoulli trials.
 
 For the first success to occur on the $x^{th}$ trial:
+
 1. The first $x-1$ trials must be failures (Probability for this to happen is $(1-p)^{(x-1)}$)
 2. $x^{th}$ trial must be a success (Probability for this to happen is $p$)
 

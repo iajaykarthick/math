@@ -373,9 +373,13 @@ pre code {
 <p>Geometric Distribution is the distribution of the number of trials
 needed to get the first success in repeated independent Bernoulli
 trials.</p>
-<p>For the first success to occur on the <span class="math inline">\(x^{th}\)</span> trial: 1. The first <span class="math inline">\(x-1\)</span> trials must be failures (Probability
-for this to happen is <span class="math inline">\((1-p)^{(x-1)}\)</span>) 2. <span class="math inline">\(x^{th}\)</span> trial must be a success
-(Probability for this to happen is <span class="math inline">\(p\)</span>)</p>
+<p>For the first success to occur on the <span class="math inline">\(x^{th}\)</span> trial:</p>
+<ol style="list-style-type: decimal">
+<li>The first <span class="math inline">\(x-1\)</span> trials must be
+failures (Probability for this to happen is <span class="math inline">\((1-p)^{(x-1)}\)</span>)</li>
+<li><span class="math inline">\(x^{th}\)</span> trial must be a success
+(Probability for this to happen is <span class="math inline">\(p\)</span>)</li>
+</ol>
 <p>Hence, <span class="math display">\[P[X=x] = (1-p)^{(x-1)}p \\
 \text{ for x = 1, 2, 3,...}
 \]</span></p>
@@ -420,7 +424,7 @@ take is 1.</p>
 <pre class="r"><code>n=10
 p=0.4
 rgeom(n=n, prob=p)</code></pre>
-<pre><code>##  [1] 0 2 4 1 4 0 0 2 1 0</code></pre>
+<pre><code>##  [1] 0 0 2 0 0 8 0 8 6 0</code></pre>
 </div>
 <div id="dgeom" class="section level3">
 <h3>dgeom</h3>
