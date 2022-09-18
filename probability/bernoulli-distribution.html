@@ -13,7 +13,7 @@
 
 <meta name="date" content="2022-09-18" />
 
-<title>index</title>
+<title>bernoulli-distribution</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -363,17 +363,64 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">index</h1>
+<h1 class="title toc-ignore">bernoulli-distribution</h1>
 <h4 class="author">Ajay Karthick</h4>
 <h4 class="date">2022-09-18</h4>
 
 </div>
 
 
-<p><a href="probability/bernoulli-distribution.html">Bernoulli
-Distribution</a><br />
-<a href="probability/binom_distribution.html">Binomial
-Distribution</a></p>
+<div id="coin-flip-simulation" class="section level3">
+<h3>Coin flip simulation</h3>
+<pre class="r"><code>coin &lt;- c(&#39;head&#39;, &#39;tail&#39;)
+num_flips &lt;- 1
+sample(coin, size = num_flips, replace = TRUE, prob = c(0.6, 0.4))</code></pre>
+<pre><code>## [1] &quot;head&quot;</code></pre>
+</div>
+<div id="probability-mass-function-pmf" class="section level3">
+<h3>Probability Mass Function (PMF):</h3>
+<p><span class="math display">\[
+    f(k; p) = \left\{\begin{array}{lr}
+        p, &amp; \text{for } k = 1\\
+        q = (1-p), &amp; \text{for } k = 0\\
+        \end{array}\right\}
+\]</span></p>
+<p>Also expressed as,</p>
+<p><span class="math display">\[
+  f(k; p) = p^k (1-p)^{(1-k)} \text{ for } k \in \left\{0, 1\right\}
+\]</span></p>
+<p>or as,</p>
+<p><span class="math display">\[
+  f(k; p) = pk + (1-p)(1-k) \text{ for } k \in \left\{ 0, 1 \right\}
+\]</span></p>
+</div>
+<div id="mean-expected-value" class="section level3">
+<h3>Mean / Expected Value</h3>
+<p><span class="math display">\[\mu = p\]</span></p>
+</div>
+<div id="variance" class="section level3">
+<h3>Variance</h3>
+<p><span class="math display">\[\sigma^2 = p (1 - p) = pq\]</span></p>
+<div id="calculation-of-variance" class="section level4">
+<h4>Calculation of Variance</h4>
+<p><span class="math inline">\(E[X^2] = Pr[X = 1] . 1 + Pr[X = 0] . 0 =
+Pr[X=1] = p\)</span><br />
+<span class="math inline">\(E[X]^2 = p^2\)</span><br />
+<span class="math inline">\(Var[X] = \sigma^2 = E[X^2] - E[X]^2 = p -
+p^2 = p (1-p) = pq\)</span><br />
+</p>
+<ul>
+<li><p>Binomial Distribution is the distribution of the number of
+successes in n-independent Bernoulli trials</p></li>
+<li><p>Geometric Distribution is the distribution of the the number of
+trials to get the first success in the n-independent Bernoulli
+trials.</p></li>
+<li><p>Negative Binomial Distribution is the distribution of the number
+of trials to get the <span class="math inline">\(r^{th}\)</span> success
+in the n-independent Bernoulli trials.</p></li>
+</ul>
+</div>
+</div>
 
 
 

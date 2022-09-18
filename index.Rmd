@@ -9,4 +9,5 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+[Bernoulli Distribution](probability/bernoulli-distribution.html)\
 [Binomial Distribution](probability/binom_distribution.html)
