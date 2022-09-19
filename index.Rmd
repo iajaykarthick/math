@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### PROBABILITY DISTRIBUTIONS
 
+#### Discrete Distributions
+
 [Bernoulli Distribution](probability/bernoulli-distribution.html)\
 [Binomial Distribution](probability/binom_distribution.html)\
 [Geometric Distribution](probability/geometric-distribution.html)\
