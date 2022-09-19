@@ -11,9 +11,9 @@
 
 <meta name="author" content="Ajay Karthick" />
 
-<meta name="date" content="2022-09-19" />
+<meta name="date" content="2022-09-18" />
 
-<title>MATH WORLD</title>
+<title>Poisson Distribution</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -363,24 +363,101 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">MATH WORLD</h1>
+<h1 class="title toc-ignore">Poisson Distribution</h1>
 <h4 class="author">Ajay Karthick</h4>
-<h4 class="date">2022-09-19</h4>
+<h4 class="date">2022-09-18</h4>
 
 </div>
 
 
-<div id="probability-distributions" class="section level3">
-<h3>PROBABILITY DISTRIBUTIONS</h3>
-<p><a href="probability/bernoulli-distribution.html">Bernoulli
-Distribution</a><br />
-<a href="probability/binom_distribution.html">Binomial
-Distribution</a><br />
-<a href="probability/geometric-distribution.html">Geometric
-Distribution</a><br />
-<a href="probability/poisson-distribution.html">Poisson
-Distribution</a><br />
-</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TD1N4hxqMzY" data-external="1">
+</iframe>
+<p>Suppose,</p>
+<ul>
+<li>Events are occurring independently.</li>
+<li>The probability that an event occurs in a given length of time does
+not change through time.</li>
+</ul>
+<p>Then X, the number of events in a fixed unit of time, has a Poisson
+distribution.</p>
+<div id="poisson-paradigm" class="section level3">
+<h3>Poisson Paradigm</h3>
+<ul>
+<li>Events <span class="math inline">\(A_1, A_2, ...,A_n\)</span>,
+Events are independent or weekly dependent,</li>
+<li><span class="math inline">\(n\)</span> large,</li>
+<li><span class="math inline">\(P(A_j)=P_j\text{, }\)</span></li>
+<li><span class="math inline">\(P_j\)</span>’s are small</li>
+</ul>
+<p>Then, the claim is that the # of <span class="math inline">\(A_j\)</span>’s that occur is approximately Poisson
+- <span class="math inline">\(Pois(\lambda)\)</span> <span class="math display">\[\lambda=\sum_{j=1}^{n}P_j\]</span></p>
+</div>
+<div id="pmf" class="section level3">
+<h3>PMF</h3>
+<p><span class="math display">\[
+P(X = x) = \frac{\lambda^x e^{-\lambda}}{x!} \\
+\text{ for x = 0, 1, 2,...}
+\]</span></p>
+<p><span class="math inline">\(e\)</span> - important mathematical
+constant, base of natural algorithms. It is approximately equal to
+2.71828 but it is an irrational number that has infinite non-repeating
+decimal places.</p>
+</div>
+<div id="mean" class="section level3">
+<h3>Mean</h3>
+<p><span class="math display">\[\mu = \lambda\]</span></p>
+</div>
+<div id="variance" class="section level3">
+<h3>Variance</h3>
+<p><span class="math display">\[\sigma^2 =\lambda\]</span></p>
+</div>
+<div id="connection-between-binomial-and-poisson-distributions" class="section level3">
+<h3>Connection between Binomial and Poisson Distributions</h3>
+<p>Binomial converges to the Poisson</p>
+<p><span class="math display">\[
+X \sim Bin(n, p) \text{, let } n \rightarrow \infty \text{, } p
+\rightarrow 0 \text{, }
+\]</span></p>
+<p><span class="math display">\[
+\lambda = np \text{ is held constant. So, p is going to 0 at the same
+rate as n is going to infinity.}
+\]</span></p>
+<p><span class="math display">\[
+\text{find what happens to }P(X=k) = {n \choose k} p^k (1 - p)^{n-k}
+\text{, k is fixed to look at the one specific value for the PMF since }
+n \rightarrow \infty \text{ and } p \rightarrow 0
+\]</span></p>
+<p><span class="math display">\[
+\text{Let&#39;s write everything in terms of n.}
+\]</span></p>
+<p><span class="math display">\[
+\text{Since, } \lambda = np \implies p = \frac{\lambda}{n}.
+\]</span></p>
+<p><span class="math display">\[
+\text{So, } P[X=k] = \frac{n . (n-1) . (n-2) . .... (n-k+1)}{k!}
+\frac{\lambda^k}{n^k} \biggl(1 - \frac{\lambda}{n} \biggr)^{n-k}
+\]</span> <span class="math display">\[
+= \frac{n . (n-1) . (n-2) . .... (n-k+1)}{k!} \frac{\lambda^k}{n^k}
+\biggl(1 - \frac{\lambda}{n} \biggr)^{n} \biggl(1 - \frac{\lambda}{n}
+\biggr)^{-k}
+\]</span></p>
+<p><span class="math display">\[
+= \frac{\lambda^k}{k!} . \frac{n . (n-1) . (n-2) . .... (n-k+1)}{n^k} .
+\biggl(1 - \frac{\lambda}{n} \biggr)^{n} . \biggl(1 - \frac{\lambda}{n}
+\biggr)^{-k}
+\]</span></p>
+<p><span class="math display">\[
+\text{Here, } \frac{n . (n-1) . (n-2) . .... (n-k+1)}{n^k} \approx 1
+\text{ since } n \rightarrow \infty \\
+\text{And, } \biggl(1 - \frac{\lambda}{n} \biggr)^{-k} = 1 \text{ since
+}n \rightarrow \infty \\
+\text{And, } \biggl(1 - \frac{\lambda}{n} \biggr)^{n} = e^{-\lambda}
+\text{ since } \biggl(1 + \frac{x}{n} \biggr)^{n} \rightarrow e^x \text{
+as } n \rightarrow \infty
+\]</span></p>
+<p><span class="math display">\[
+\text{So, } P[X=k] = \frac{\lambda^k}{k!} e^{-\lambda}
+\]</span></p>
 </div>
 
 

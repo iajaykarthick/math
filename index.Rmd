@@ -14,3 +14,4 @@ knitr::opts_chunk$set(echo = TRUE)
 [Bernoulli Distribution](probability/bernoulli-distribution.html)\
 [Binomial Distribution](probability/binom_distribution.html)\
 [Geometric Distribution](probability/geometric-distribution.html)\
+[Poisson Distribution](probability/poisson-distribution.html)\

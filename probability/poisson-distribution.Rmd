@@ -1,0 +1,95 @@
+---
+title: "Poisson Distribution"
+author: "Ajay Karthick"
+date: "2022-09-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+<iframe  width="560" height="315" src="https://www.youtube.com/embed/TD1N4hxqMzY" data-external= "1" > </iframe>
+
+Suppose,
+
+* Events are occurring independently.
+* The probability that an event occurs in a given length of time does not change through time.
+
+Then X, the number of events in a fixed unit of time, has a Poisson distribution.
+
+### Poisson Paradigm
+
+* Events $A_1, A_2, ...,A_n$, Events are independent or weekly dependent,
+* $n$ large,
+* $P(A_j)=P_j\text{, }$
+* $P_j$'s are small
+
+Then, the claim is that the # of $A_j$'s that occur is approximately Poisson - $Pois(\lambda)$
+\[\lambda=\sum_{j=1}^{n}P_j\]
+
+### PMF
+
+\[
+P(X = x) = \frac{\lambda^x e^{-\lambda}}{x!} \\
+\text{ for x = 0, 1, 2,...}
+\]
+
+$e$ - important mathematical constant, base of natural algorithms. It is approximately equal to 2.71828 but it is an irrational number that has infinite non-repeating decimal places.
+
+
+### Mean
+
+$$\mu = \lambda$$
+
+### Variance
+
+$$\sigma^2 =\lambda$$
+
+
+### Connection between Binomial and Poisson Distributions
+
+Binomial converges to the Poisson
+
+\[
+X \sim Bin(n, p) \text{, let } n \rightarrow \infty \text{, } p \rightarrow 0 \text{, }
+\]
+
+\[
+\lambda = np \text{ is held constant. So, p is going to 0 at the same rate as n is going to infinity.} 
+\]
+
+\[
+\text{find what happens to }P(X=k) = {n \choose k} p^k (1 - p)^{n-k} \text{, k is fixed to look at the one specific value for the PMF since } n \rightarrow \infty \text{ and } p \rightarrow 0
+\]
+
+\[
+\text{Let's write everything in terms of n.} 
+\]
+
+\[
+\text{Since, } \lambda = np \implies p = \frac{\lambda}{n}.
+\]
+
+
+\[
+\text{So, } P[X=k] = \frac{n . (n-1) . (n-2) . .... (n-k+1)}{k!} \frac{\lambda^k}{n^k} \biggl(1 - \frac{\lambda}{n} \biggr)^{n-k} 
+\]
+\[
+= \frac{n . (n-1) . (n-2) . .... (n-k+1)}{k!} \frac{\lambda^k}{n^k} \biggl(1 - \frac{\lambda}{n} \biggr)^{n} \biggl(1 - \frac{\lambda}{n} \biggr)^{-k}
+\]
+
+\[
+= \frac{\lambda^k}{k!} . \frac{n . (n-1) . (n-2) . .... (n-k+1)}{n^k} . \biggl(1 - \frac{\lambda}{n} \biggr)^{n} . \biggl(1 - \frac{\lambda}{n} \biggr)^{-k}
+\]
+
+\[
+\text{Here, } \frac{n . (n-1) . (n-2) . .... (n-k+1)}{n^k} \approx 1 \text{ since } n \rightarrow \infty \\
+\text{And, } \biggl(1 - \frac{\lambda}{n} \biggr)^{-k} = 1 \text{ since }n \rightarrow \infty \\
+\text{And, } \biggl(1 - \frac{\lambda}{n} \biggr)^{n} = e^{-\lambda} \text{ since } \biggl(1 + \frac{x}{n} \biggr)^{n} \rightarrow e^x \text{ as } n \rightarrow \infty
+\]
+
+\[
+\text{So, } P[X=k] = \frac{\lambda^k}{k!} e^{-\lambda}
+\]
