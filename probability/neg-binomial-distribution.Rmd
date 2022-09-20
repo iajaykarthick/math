@@ -1,0 +1,81 @@
+---
+title: "Negative Binomial Distribution"
+author: "Ajay Karthick"
+date: "2022-09-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The Negative Binomial distribution is the distribution of the number of trials needed to get the $r^{th}$ success.
+
+##### Note
+The geometric distribution is the distribution of the number of trials needed to get the first success in repeated independent Bernoulli trials.
+
+The Binomial distribution is the distribution of the number of successes in a fixed number of independent Bernoulli trials.
+
+The Negative Binomial distribution is the distribution of the number of trials needed to get a fixed number of successes.
+
+
+For the $r^{th}$ success to occur on $x^{th}$ trial:
+
+* The first $x - 1$ trials must result in $r - 1$ successes.
+
+\[
+{x-1 \choose r-1} p^{(r-1)} (1 - p)^{(x-1)-(r-1)}
+\]
+
+* The $x^{th}$ trial must be a success, which has a probability of p.
+
+The probability of the $r^{th}$ success occurs on the $x^{th}$ trial is:
+
+\[
+P(X=x) = p * {x-1 \choose r-1} p^{(r-1)} (1 - p)^{(x-1)-(r-1)}\\
+={x-1 \choose r-1} p^{r} (1 - p)^{(x-r)}\\
+\]
+
+### PMF
+
+\[
+P[X=x] = {x-1 \choose r-1} p^{r} (1 - p)^{(x-r)} \\
+\text{ for x = r, r+1, ....}
+\]
+
+### Mean
+
+\[
+E[X] = E[X_1, X_2, ... + X_r]\\
+X_j\text{ is the number of trials happened after }(j-1)^{st}\text{ success to reach the }j^{th}\text{ success. This includes the j^{th} success as well. }\\
+X_j \sim \text{FS}(p) \text{ - time until the first success; counting the success.}\\
+\text{Let }Y = X_j - 1 \text{. }Y \sim \text{ Geom(p) }\\
+E[X_j] = E[Y] + 1 = \frac{q}{p} + 1 = \frac{1}{p}\\
+\text{So, } E[X] = E[X_1, X_2, ... + X_r] = \frac{r}{p}
+\]
+
+Sometimes,
+it models the number of failures before $r^{th}$ success.
+
+$r^{th}$ success with $n$ failures
+
+
+<iframe  width="560" height="315" src="https://www.youtube.com/embed/P1fSFvhPf7Q?start=892" data-external= "1"></iframe>
+
+### PMF
+\[
+P[X=n] = {n+r-1 \choose r-1} p^r (1-p)^n\\
+\text{ for n = 0, 1, 2....}
+\]
+
+
+### Mean
+
+\[
+E[X] = E[X_1 + X_2 + .... + X_r] \\
+X_j\text{ is the number of failures between }(j-1)^{st}\text{ success and }j^{th}\text{ success.}\\
+X_j \sim \text{Geom}(p)\\
+E[X] = E[X_1 + X_2 + .... + X_r] = \frac{rq}{p}
+\]
+
+

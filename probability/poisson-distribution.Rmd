@@ -93,3 +93,56 @@ X \sim Bin(n, p) \text{, let } n \rightarrow \infty \text{, } p \rightarrow 0 \t
 \[
 \text{So, } P[X=k] = \frac{\lambda^k}{k!} e^{-\lambda}
 \]
+
+### rpois
+
+```{r}
+rpois(n=10, 20)
+```
+
+### dpois
+
+```{r}
+success=0:30
+lambda=5
+pmf = dpois(x=success, lambda=lambda)
+plot(success, 
+     pmf,
+     type='h',
+     main=paste('Poisson Distribution - PMF (lambda', lambda, ')', sep=' '),
+     xlab='# Success',
+     ylab='Probability',
+     lwd=3)
+```
+
+### ppois 
+
+```{r}
+success=0:30
+lambda=5
+cdf <- ppois(q=success, lambda=lambda)
+plot(success, 
+     cdf,
+     type='h',
+     main='Poisson Distribution - CDF',
+     xlab='# Success',
+     ylab='Probability',
+     lwd=3)
+
+```
+
+### qpois
+
+```{r}
+quantiles <- seq(0, 1, .001)
+lambda <- 5
+inverse_cdf <- qpois(p=quantiles, lambda=lambda)
+plot(quantiles, 
+     inverse_cdf,
+     type='s',
+     main='Poisson Distribution - Quantile',
+     xlab='p',
+     ylab='Q(p)',
+     lwd=1)
+```
+
